@@ -1,9 +1,11 @@
-module.exports = async (req, res, next) => {
-  console.log({
-    timeStamp: new Date().getTime(),
-    path: req.originalUrl,
-    parameter: JSON.stringify(req.query),
-  });
+const putLog = require('../../../services/logs/put-log');
 
-  return next();
+module.exports = (req, res, next) => {
+  putLog(
+    new Date().getTime(),
+    req.path,
+    JSON.stringify(req.query),
+  );
+
+  next();
 };

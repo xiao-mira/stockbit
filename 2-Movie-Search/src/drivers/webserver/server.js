@@ -1,4 +1,4 @@
-require('../config/environment');
+require('../config/bootstrap');
 
 const express = require('express');
 

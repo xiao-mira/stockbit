@@ -18,12 +18,11 @@ module.exports = async (searchKeyword, type, year, page) => {
 
   const searchResponse = await search(searchRequestSchema.value);
 
-  return searchResponse;
-  // const searchResponseSchema = responseSchema.validate(searchResponse);
+  const searchResponseSchema = responseSchema.validate(searchResponse);
 
-  // if (searchResponseSchema.error) {
-  //   throw new Error(searchResponseSchema.error);
-  // }
+  if (searchResponseSchema.error) {
+    throw new Error(searchResponseSchema.error);
+  }
 
-  // return searchResponseSchema.value;
+  return searchResponseSchema.value;
 };
