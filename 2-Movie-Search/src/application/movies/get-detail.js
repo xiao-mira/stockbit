@@ -1,5 +1,5 @@
-const { requestSchema, responseSchema, createRequest } = require('../../model/movies/get-detail-schema');
-const getDetail = require('../../drivers/repositories/movies/get-detail');
+const { requestSchema, responseSchema, createRequest } = require('../../domain/movies/get-detail-schema');
+const getDetail = require('../../data-access/repositories/movies/get-detail');
 
 module.exports = async (title, year, plot, type, imdbId) => {
   const getDetailRequest = createRequest(

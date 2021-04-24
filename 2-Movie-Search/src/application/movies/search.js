@@ -1,5 +1,5 @@
-const { requestSchema, responseSchema, createRequest } = require('../../model/movies/search-schema');
-const search = require('../../drivers/repositories/movies/search');
+const { requestSchema, responseSchema, createRequest } = require('../../domain/movies/search-schema');
+const search = require('../../data-access/repositories/movies/search');
 
 module.exports = async (searchKeyword, type, year, page) => {
   const searchRequest = createRequest(

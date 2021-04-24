@@ -1,4 +1,4 @@
-const putLog = require('../../../services/logs/put-log');
+const putLog = require('../../../application/logs/put-log');
 
 module.exports = (req, res, next) => {
   putLog(

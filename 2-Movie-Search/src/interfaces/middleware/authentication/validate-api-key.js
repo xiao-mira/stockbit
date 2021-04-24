@@ -1,6 +1,6 @@
 const Bluebird = require('bluebird');
 
-const validateApiKey = require('../../../services/authentication/validate-api-key');
+const validateApiKey = require('../../../application/authentication/validate-api-key');
 
 module.exports = (req, res, next) => {
   return Bluebird.resolve()

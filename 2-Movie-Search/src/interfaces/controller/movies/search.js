@@ -1,5 +1,5 @@
 const Bluebird = require('bluebird');
-const searchMovie = require('../../../services/movies/search');
+const searchMovie = require('../../../application/movies/search');
 
 module.exports = async (req, res) => {
   return Bluebird.resolve()

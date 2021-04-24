@@ -1,5 +1,5 @@
-const { requestSchema, createRequest } = require('../../model/logs/put-log');
-const putLog = require('../../drivers/repositories/logs/put-log');
+const { requestSchema, createRequest } = require('../../domain/logs/put-log');
+const putLog = require('../../data-access/repositories/logs/put-log');
 
 module.exports = (timeStamp, path, parameter) => {
   const putLogRequest = createRequest(timeStamp, path, parameter);

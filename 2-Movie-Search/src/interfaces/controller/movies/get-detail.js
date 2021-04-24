@@ -1,5 +1,5 @@
 const Bluebird = require('bluebird');
-const getDetail = require('../../../services/movies/get-detail');
+const getDetail = require('../../../application/movies/get-detail');
 
 module.exports = async (req, res) => {
   return Bluebird.resolve()
