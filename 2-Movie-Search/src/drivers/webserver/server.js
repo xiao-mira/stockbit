@@ -5,11 +5,14 @@ const express = require('express');
 const app = express();
 const movieRoutes = require('../../interfaces/routes/movies');
 const loggerMiddleWare = require('../../interfaces/middleware/logger/put-logger');
+const validateApiKey = require('../../interfaces/middleware/authentication/validate-api-key');
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.use(loggerMiddleWare);
+app.use(validateApiKey);
+
 app.use(movieRoutes);
 
 app.use((err, req, res, next) => {
