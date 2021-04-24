@@ -1,13 +1,12 @@
 const Joi = require('joi');
 
-const getDetailSchema = {
+const searchSchema = {
   requestSchema: Joi.object({
-    t: Joi.string(),
-    y: Joi.number(),
-    plot: Joi.string().valid('short', 'long'),
-    apikey: Joi.string().required(),
+    s: Joi.string(),
     type: Joi.string().valid('movie', 'series', 'episode'),
-    i: Joi.string(),
+    y: Joi.number(),
+    page: Joi.number(),
+    apikey: Joi.string().required(),
   }),
 
   responseSchema: Joi.object({
@@ -39,18 +38,17 @@ const getDetailSchema = {
     Error: Joi.string(),
   }),
 
-  createRequest(apikey, title, year, plot, type, imdbId) {
+  createRequest(apikey, searchKeyword, type, year, page) {
     const requestObject = {
-      t: title,
-      y: year,
-      plot,
-      apikey,
+      s: searchKeyword,
       type,
-      i: imdbId,
+      y: year,
+      page,
+      apikey,
     };
 
     return requestObject;
   },
 };
 
-module.exports = getDetailSchema;
+module.exports = searchSchema;

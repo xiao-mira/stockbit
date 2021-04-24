@@ -1,7 +1,34 @@
-const search = require('../../../services/movies/search');
+const Bluebird = require('bluebird');
+const searchMovie = require('../../../services/movies/search');
 
 module.exports = async (req, res) => {
-  const searchResult = await search();
+  return Bluebird.resolve()
+    .then(async () => {
+      const {
+        searchKeyword,
+        type,
+        year,
+        page,
+      } = req.query;
 
-  return res.send(searchResult);
+      const getDetailResult = await searchMovie(
+        searchKeyword,
+        type,
+        year,
+        page,
+      );
+
+      return res.send({
+        status: 200,
+        message: null,
+        data: getDetailResult,
+      });
+    })
+    .catch((error) => {
+      return res.status(500).send({
+        status: 400,
+        message: error.message,
+        data: error,
+      });
+    });
 };

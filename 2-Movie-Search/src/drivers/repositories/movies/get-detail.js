@@ -1,15 +1,15 @@
 const request = require('../../utils/request');
 
-module.exports = (movieRequest) => {
+module.exports = (getDetailRequest) => {
   return request.get(process.env.MOVIE_API_URL, {
-    params: movieRequest,
+    params: getDetailRequest,
   })
-    .then((movieResponse) => {
-      if (movieResponse.status !== 200) {
-        throw new Error(movieResponse.data.Error);
+    .then((getDetailResponse) => {
+      if (getDetailResponse.status !== 200) {
+        throw new Error(getDetailResponse.data.Error);
       }
 
-      return movieResponse.data;
+      return getDetailResponse.data;
     })
     .catch((errorResponse) => {
       throw new Error(errorResponse.statusText);
