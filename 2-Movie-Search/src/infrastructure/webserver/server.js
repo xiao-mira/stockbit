@@ -4,7 +4,7 @@ const express = require('express');
 
 const app = express();
 const movieRoutes = require('../../interfaces/routes/movies');
-const loggerMiddleWare = require('../../interfaces/middleware/logger/put-logger');
+const loggerMiddleWare = require('../../interfaces/middleware/logger/put-log');
 const validateApiKey = require('../../interfaces/middleware/authentication/validate-api-key');
 
 app.use(express.urlencoded({ extended: false }));
