@@ -1,11 +1,11 @@
 {
-  "name": "Movie search application",
+  "name": "movie-search-application",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "mocha tests/ --recursive",
-    "start": "node src/infrastructure/webserver/server.js"
+    "start": "node 2-Movie-Search/src/infrastructure/webserver/server.js"
   },
   "keywords": [],
   "author": "",
