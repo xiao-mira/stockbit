@@ -3,5 +3,10 @@
   "rules": {
       "no-console": "off",
       "arrow-body-style": "off"
-   }
+   },
+   "env": {
+      "commonjs": true,
+      "node": true,
+      "mocha": true
+    }
 }
